@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Tower of Hanoi</title>
-    <url>/2020/06/25/Tower-of-Hanoi/</url>
-    <content><![CDATA[<p><img src="https://wdd.js.org/img/images/20180208212257_BZZjA5_1200px-The_Great_Wave_off_Kanagawa.jpeg" alt=""></p>
-<p>文章摘要</p>
-<a id="more"></a>
-
-<p>文章正文</p>
-]]></content>
-      <tags>
-        <tag>recursive</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>路</title>
     <url>/2020/06/24/hello-world/</url>
     <content><![CDATA[<p>插入图片</p>
@@ -27,6 +14,19 @@
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tower of Hanoi</title>
+    <url>/2020/06/25/Tower-of-Hanoi/</url>
+    <content><![CDATA[<p><img src="https://wdd.js.org/img/images/20180208212257_BZZjA5_1200px-The_Great_Wave_off_Kanagawa.jpeg" alt=""></p>
+<p>文章摘要</p>
+<a id="more"></a>
+
+<p>文章正文</p>
+]]></content>
+      <tags>
+        <tag>recursive</tag>
       </tags>
   </entry>
 </search>
