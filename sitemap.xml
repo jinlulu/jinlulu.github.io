@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jinlulu.github.io/2020/06/24/hello-world/</loc>
+    
+    <lastmod>2020-06-27T00:36:13.511Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jinlulu.github.io/categories/index.html</loc>
+    
+    <lastmod>2020-06-26T23:48:34.016Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jinlulu.github.io/2020/06/25/Tower-of-Hanoi/</loc>
     
-    <lastmod>2020-06-25T14:33:17.185Z</lastmod>
+    <lastmod>2020-06-26T23:22:01.643Z</lastmod>
     
   </url>
   
@@ -19,13 +33,6 @@
     <loc>https://jinlulu.github.io/tags/index.html</loc>
     
     <lastmod>2020-06-25T12:57:28.608Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jinlulu.github.io/2020/06/24/hello-world/</loc>
-    
-    <lastmod>2020-06-25T01:19:42.975Z</lastmod>
     
   </url>
   
