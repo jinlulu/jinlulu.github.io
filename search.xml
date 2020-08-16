@@ -34,19 +34,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Tower of Hanoi</title>
-    <url>/2020/06/25/Tower-of-Hanoi/</url>
-    <content><![CDATA[<p><img src="https://wdd.js.org/img/images/20180208212257_BZZjA5_1200px-The_Great_Wave_off_Kanagawa.jpeg" alt=""></p>
-<p>待更新</p>
-<a id="more"></a>
-
-<p>文章正文</p>
-]]></content>
-      <tags>
-        <tag>recursive</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git memo</title>
     <url>/2020/08/02/git-memo/</url>
     <content><![CDATA[<h3 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h3><p>Use .gitignore file can help you not to upload unnecessary files and folders.</p>
@@ -84,6 +71,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Tower of Hanoi</title>
+    <url>/2020/06/25/Tower-of-Hanoi/</url>
+    <content><![CDATA[<p><img src="https://wdd.js.org/img/images/20180208212257_BZZjA5_1200px-The_Great_Wave_off_Kanagawa.jpeg" alt=""></p>
+<p>待更新</p>
+<a id="more"></a>
+
+<p>文章正文</p>
+]]></content>
+      <tags>
+        <tag>recursive</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hello world</title>
     <url>/2020/06/24/hello-world/</url>
     <content><![CDATA[<p>插入图片</p>
@@ -98,6 +98,222 @@
       <tags>
         <tag>hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>pay-attention</title>
+    <url>/2020/08/12/pay-attention-1/</url>
+    <content><![CDATA[<a id="more"></a>
+
+
+
+<p>Q: What is output for list1,2,3 ?</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extendList</span><span class="params">(val, list=[])</span>:</span></span><br><span class="line">    list.append(val)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line">list1 = extendList(<span class="number">10</span>)</span><br><span class="line">list2 = extendList(<span class="number">123</span>,[])</span><br><span class="line">list3 = extendList(<span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list1 = "</span>, list1)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list2 = "</span>, list2)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list3 = "</span>, list3)</span><br></pre></td></tr></table></figure>
+
+<p>Wrong answer : list1 = [10], list2 = [123], list3 = [‘a’]</p>
+<p>Correct answer :</p>
+<p><img src="pay-attention-1/pay-attention01.jpg" alt=""></p>
+<p>How could we change to it ?</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extendList</span><span class="params">(val, list=None)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> list <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    list = []</span><br><span class="line">  list.append(val)</span><br><span class="line">  <span class="keyword">return</span> list</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>leetcode205 Isomorphic Strings</title>
+    <url>/2020/07/07/leetcode205%20Isomorphic%20Strings/</url>
+    <content><![CDATA[<p>Given two strings <strong><em>s</em></strong> and <strong><em>t</em></strong>, determine if they are isomorphic.</p>
+<p>Two strings are isomorphic if the characters in <strong><em>s</em></strong> can be replaced to get <strong><em>t</em></strong>.</p>
+<p>All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character but a character may map to itself.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;egg&quot;, t &#x3D; &quot;add&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+
+
+<h5 id="209-Word-Pattern"><a href="#209-Word-Pattern" class="headerlink" title="209 Word Pattern"></a>209 Word Pattern</h5><p>用到的语法：</p>
+<p>python string <strong>split() method</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">txt = <span class="string">"welcome to the jungle"</span></span><br><span class="line"></span><br><span class="line">x = txt.split()</span><br><span class="line"></span><br><span class="line">[<span class="string">'welcome'</span>, <span class="string">'to'</span>, <span class="string">'the'</span>, <span class="string">'jungle'</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>solution 1: Two Hash Maps</strong></p>
+<p><code>pattern</code>: ‘abba’</p>
+<p><code>str</code>: ‘dog cat fish dog’</p>
+<p><code>pattern_dict</code> = {a:0, b:1}</p>
+<p><code>str_dict</code> = {dog:0, cat:1, fish:2}</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordPattern</span><span class="params">(self, pattern: str, str: str)</span> -&gt; bool:</span></span><br><span class="line">        pattern_dict = &#123;&#125;</span><br><span class="line">        str_dict = &#123;&#125;</span><br><span class="line">        str_word = str.split()</span><br><span class="line">        <span class="keyword">if</span> len(pattern) != len(str_word):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(pattern)):</span><br><span class="line">            <span class="keyword">if</span> pattern[i] <span class="keyword">not</span> <span class="keyword">in</span> pattern_dict:</span><br><span class="line">                pattern_dict[pattern[i]] = i</span><br><span class="line">            <span class="keyword">if</span> str_word[i] <span class="keyword">not</span> <span class="keyword">in</span> str_dict:</span><br><span class="line">                str_dict[str_word[i]] = i</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(pattern)):</span><br><span class="line">            <span class="keyword">if</span> pattern_dict[pattern[i]] != str_dict[str_word[i]]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>solution 2:  Single Index Hash Map</strong></p>
+<p><code>pattern</code>: ‘abba’</p>
+<p><code>str</code>: ‘dog cat fish dog’</p>
+<p><code>map_index</code>={ a:0 , dog:0 , b:1 , cat:1 , fish:2}</p>
+<p>index of ‘b’ and index of ‘fish’ are NOT the same. Returns <code>False</code>.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordPattern</span><span class="params">(self, pattern: str, str: str)</span> -&gt; bool:</span></span><br><span class="line">        map_index = &#123;&#125;</span><br><span class="line">        words = str.split()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> len(pattern) != len(words):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(words)):</span><br><span class="line">            c = pattern[i]</span><br><span class="line">            w = words[i]</span><br><span class="line"></span><br><span class="line">            char_key = <span class="string">'char_&#123;&#125;'</span>.format(c)</span><br><span class="line">            char_word = <span class="string">'word_&#123;&#125;'</span>.format(w)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char_key <span class="keyword">not</span> <span class="keyword">in</span> map_index:</span><br><span class="line">                map_index[char_key] = i</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char_word <span class="keyword">not</span> <span class="keyword">in</span> map_index:</span><br><span class="line">                map_index[char_word] = i </span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> map_index[char_key] != map_index[char_word]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p> 关于这里为什么要把char和string 区别开来：</p>
+<p>如果不区别的话，</p>
+<p>pattern=”abc”<br>str=”b c a”</p>
+<p><em>Differentiating between character and string:</em> In Python there is no separate <code>char</code> type. And for cases such as:</p>
+<p>pattern: ‘abba’ str: ‘b a a b’</p>
+<p>Using the same hash map will not work properly. A workaround is to prefix each character in <code>pattern</code> with “char_” and each word in <code>str</code> with “word_”.</p>
+<p><strong>solution 3:</strong> </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wordPattern</span><span class="params">(self, pattern, str)</span>:</span></span><br><span class="line">    s = pattern</span><br><span class="line">    t = str.split()</span><br><span class="line">    <span class="keyword">return</span> len(set(zip(s, t))) == len(set(s)) == len(set(t)) <span class="keyword">and</span> len(s) == len(t)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h5 id="205-Isomorphic-Strings"><a href="#205-Isomorphic-Strings" class="headerlink" title="205 Isomorphic Strings"></a>205 Isomorphic Strings</h5><p>209 和 205 同思路，同方法</p>
+<p><strong>Solution 1:</strong></p>
+<p><code>s</code>=”foo”</p>
+<p><code>t</code>=”bar”</p>
+<p>check={ f:true, o:true}</p>
+<p>dic={ f:b, o:a}</p>
+<p>When i =index2 </p>
+<p>o and r return false, since o is already in check</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isIsomorphic</span><span class="params">(self, s: str, t: str)</span> -&gt; bool:</span></span><br><span class="line">        dic=&#123;&#125;</span><br><span class="line">        check=&#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="keyword">if</span> s[i] <span class="keyword">in</span> dic:</span><br><span class="line">                <span class="keyword">if</span> dic[s[i]]!=t[i]:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> t[i] <span class="keyword">in</span> check:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">                dic[s[i]]=t[i]</span><br><span class="line">                check[t[i]]=<span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>solution 3:</strong> </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> len(set(zip(s, t))) == len(set(s)) == len(set(t))</span><br></pre></td></tr></table></figure>
+
+<p>python <strong>zip() 用法</strong></p>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>Hash Table</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode 347 Top K Freq Elments</title>
+    <url>/2020/07/16/leetcode-347-Top-K-Freq-Elments/</url>
+    <content><![CDATA[<p>Given a non-empty array of integers, return the <strong><em>k\</em></strong> most frequent elements.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2</span><br><span class="line">Output: [1,2]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [1], k &#x3D; 1</span><br><span class="line">Output: [1]</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h5 id="347-Top-K-Frequent-Elements"><a href="#347-Top-K-Frequent-Elements" class="headerlink" title="347. Top K Frequent Elements"></a>347. Top K Frequent Elements</h5><p>题目要求：Your algorithm’s time complexity <strong>must be</strong> better than O(<em>n</em> log <em>n</em>), where <em>n</em> is the array’s size.</p>
+<p>第一遍自己写的O(<em>n</em> log <em>n</em>),只能说时间复杂度小于等于O(nlogn),不太满足题意的样子</p>
+<ol>
+<li><p>用dic 记录每个数字出现的次数</p>
+</li>
+<li><p>sorted()按照出现的次数大小进行排序</p>
+</li>
+<li><p>返回前k个</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent</span><span class="params">(self, nums: List[int], k: int)</span> -&gt; List[int]:</span></span><br><span class="line">        dic=&#123;&#125;</span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">not</span> <span class="keyword">in</span> dic:</span><br><span class="line">                dic[nums[i]]=count</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dic[nums[i]]+=<span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        a=sorted(dic.items(),key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>],reverse=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment">#[(1,3),(2,2),(3,1)]</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> [x[<span class="number">0</span>] <span class="keyword">for</span> x <span class="keyword">in</span> a[:k]]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>List Comprehensions：</p>
+<p><a href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions" target="_blank" rel="noopener">https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions</a></p>
+<p>List  time-complexity</p>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>Average Case</strong></th>
+<th><strong><a href="http://en.wikipedia.org/wiki/Amortized_analysis" target="_blank" rel="noopener">Amortized Worst Case</a></strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Copy</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Append[1]</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Pop last</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Pop intermediate</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr>
+<td>Insert</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Get Item</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Set Item</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Delete Item</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Iteration</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Get Slice</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr>
+<td>Del Slice</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>Set Slice</td>
+<td>O(k+n)</td>
+<td>O(k+n)</td>
+</tr>
+<tr>
+<td>Extend[1]</td>
+<td>O(k)</td>
+<td>O(k)</td>
+</tr>
+<tr>
+<td><a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt" target="_blank" rel="noopener">Sort</a></td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+</tr>
+<tr>
+<td>Multiply</td>
+<td>O(nk)</td>
+<td>O(nk)</td>
+</tr>
+<tr>
+<td>x in s</td>
+<td>O(n)</td>
+<td></td>
+</tr>
+<tr>
+<td>min(s), max(s)</td>
+<td>O(n)</td>
+<td></td>
+</tr>
+<tr>
+<td>Get Length</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+]]></content>
   </entry>
   <entry>
     <title>awspre</title>
@@ -594,226 +810,5 @@
       <tags>
         <tag>aws</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>leetcode 347 Top K Freq Elments</title>
-    <url>/2020/07/16/leetcode-347-Top-K-Freq-Elments/</url>
-    <content><![CDATA[<p>Given a non-empty array of integers, return the <strong><em>k\</em></strong> most frequent elements.</p>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [1,1,1,2,2,3], k &#x3D; 2</span><br><span class="line">Output: [1,2]</span><br></pre></td></tr></table></figure>
-
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [1], k &#x3D; 1</span><br><span class="line">Output: [1]</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h5 id="347-Top-K-Frequent-Elements"><a href="#347-Top-K-Frequent-Elements" class="headerlink" title="347. Top K Frequent Elements"></a>347. Top K Frequent Elements</h5><p>题目要求：Your algorithm’s time complexity <strong>must be</strong> better than O(<em>n</em> log <em>n</em>), where <em>n</em> is the array’s size.</p>
-<p>第一遍自己写的O(<em>n</em> log <em>n</em>),只能说时间复杂度小于等于O(nlogn),不太满足题意的样子</p>
-<ol>
-<li><p>用dic 记录每个数字出现的次数</p>
-</li>
-<li><p>sorted()按照出现的次数大小进行排序</p>
-</li>
-<li><p>返回前k个</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">topKFrequent</span><span class="params">(self, nums: List[int], k: int)</span> -&gt; List[int]:</span></span><br><span class="line">        dic=&#123;&#125;</span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">not</span> <span class="keyword">in</span> dic:</span><br><span class="line">                dic[nums[i]]=count</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dic[nums[i]]+=<span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        a=sorted(dic.items(),key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>],reverse=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment">#[(1,3),(2,2),(3,1)]</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> [x[<span class="number">0</span>] <span class="keyword">for</span> x <span class="keyword">in</span> a[:k]]</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>List Comprehensions：</p>
-<p><a href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions" target="_blank" rel="noopener">https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions</a></p>
-<p>List  time-complexity</p>
-<table>
-<thead>
-<tr>
-<th><strong>Operation</strong></th>
-<th><strong>Average Case</strong></th>
-<th><strong><a href="http://en.wikipedia.org/wiki/Amortized_analysis" target="_blank" rel="noopener">Amortized Worst Case</a></strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Copy</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Append[1]</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>Pop last</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>Pop intermediate</td>
-<td>O(k)</td>
-<td>O(k)</td>
-</tr>
-<tr>
-<td>Insert</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Get Item</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>Set Item</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>Delete Item</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Iteration</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Get Slice</td>
-<td>O(k)</td>
-<td>O(k)</td>
-</tr>
-<tr>
-<td>Del Slice</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>Set Slice</td>
-<td>O(k+n)</td>
-<td>O(k+n)</td>
-</tr>
-<tr>
-<td>Extend[1]</td>
-<td>O(k)</td>
-<td>O(k)</td>
-</tr>
-<tr>
-<td><a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt" target="_blank" rel="noopener">Sort</a></td>
-<td>O(n log n)</td>
-<td>O(n log n)</td>
-</tr>
-<tr>
-<td>Multiply</td>
-<td>O(nk)</td>
-<td>O(nk)</td>
-</tr>
-<tr>
-<td>x in s</td>
-<td>O(n)</td>
-<td></td>
-</tr>
-<tr>
-<td>min(s), max(s)</td>
-<td>O(n)</td>
-<td></td>
-</tr>
-<tr>
-<td>Get Length</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-</tbody></table>
-]]></content>
-  </entry>
-  <entry>
-    <title>leetcode205 Isomorphic Strings</title>
-    <url>/2020/07/07/leetcode205%20Isomorphic%20Strings/</url>
-    <content><![CDATA[<p>Given two strings <strong><em>s</em></strong> and <strong><em>t</em></strong>, determine if they are isomorphic.</p>
-<p>Two strings are isomorphic if the characters in <strong><em>s</em></strong> can be replaced to get <strong><em>t</em></strong>.</p>
-<p>All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character but a character may map to itself.</p>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: s &#x3D; &quot;egg&quot;, t &#x3D; &quot;add&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-
-
-<h5 id="209-Word-Pattern"><a href="#209-Word-Pattern" class="headerlink" title="209 Word Pattern"></a>209 Word Pattern</h5><p>用到的语法：</p>
-<p>python string <strong>split() method</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">txt = <span class="string">"welcome to the jungle"</span></span><br><span class="line"></span><br><span class="line">x = txt.split()</span><br><span class="line"></span><br><span class="line">[<span class="string">'welcome'</span>, <span class="string">'to'</span>, <span class="string">'the'</span>, <span class="string">'jungle'</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>solution 1: Two Hash Maps</strong></p>
-<p><code>pattern</code>: ‘abba’</p>
-<p><code>str</code>: ‘dog cat fish dog’</p>
-<p><code>pattern_dict</code> = {a:0, b:1}</p>
-<p><code>str_dict</code> = {dog:0, cat:1, fish:2}</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordPattern</span><span class="params">(self, pattern: str, str: str)</span> -&gt; bool:</span></span><br><span class="line">        pattern_dict = &#123;&#125;</span><br><span class="line">        str_dict = &#123;&#125;</span><br><span class="line">        str_word = str.split()</span><br><span class="line">        <span class="keyword">if</span> len(pattern) != len(str_word):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(pattern)):</span><br><span class="line">            <span class="keyword">if</span> pattern[i] <span class="keyword">not</span> <span class="keyword">in</span> pattern_dict:</span><br><span class="line">                pattern_dict[pattern[i]] = i</span><br><span class="line">            <span class="keyword">if</span> str_word[i] <span class="keyword">not</span> <span class="keyword">in</span> str_dict:</span><br><span class="line">                str_dict[str_word[i]] = i</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(pattern)):</span><br><span class="line">            <span class="keyword">if</span> pattern_dict[pattern[i]] != str_dict[str_word[i]]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>solution 2:  Single Index Hash Map</strong></p>
-<p><code>pattern</code>: ‘abba’</p>
-<p><code>str</code>: ‘dog cat fish dog’</p>
-<p><code>map_index</code>={ a:0 , dog:0 , b:1 , cat:1 , fish:2}</p>
-<p>index of ‘b’ and index of ‘fish’ are NOT the same. Returns <code>False</code>.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordPattern</span><span class="params">(self, pattern: str, str: str)</span> -&gt; bool:</span></span><br><span class="line">        map_index = &#123;&#125;</span><br><span class="line">        words = str.split()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> len(pattern) != len(words):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(words)):</span><br><span class="line">            c = pattern[i]</span><br><span class="line">            w = words[i]</span><br><span class="line"></span><br><span class="line">            char_key = <span class="string">'char_&#123;&#125;'</span>.format(c)</span><br><span class="line">            char_word = <span class="string">'word_&#123;&#125;'</span>.format(w)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char_key <span class="keyword">not</span> <span class="keyword">in</span> map_index:</span><br><span class="line">                map_index[char_key] = i</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> char_word <span class="keyword">not</span> <span class="keyword">in</span> map_index:</span><br><span class="line">                map_index[char_word] = i </span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> map_index[char_key] != map_index[char_word]:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-<p> 关于这里为什么要把char和string 区别开来：</p>
-<p>如果不区别的话，</p>
-<p>pattern=”abc”<br>str=”b c a”</p>
-<p><em>Differentiating between character and string:</em> In Python there is no separate <code>char</code> type. And for cases such as:</p>
-<p>pattern: ‘abba’ str: ‘b a a b’</p>
-<p>Using the same hash map will not work properly. A workaround is to prefix each character in <code>pattern</code> with “char_” and each word in <code>str</code> with “word_”.</p>
-<p><strong>solution 3:</strong> </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wordPattern</span><span class="params">(self, pattern, str)</span>:</span></span><br><span class="line">    s = pattern</span><br><span class="line">    t = str.split()</span><br><span class="line">    <span class="keyword">return</span> len(set(zip(s, t))) == len(set(s)) == len(set(t)) <span class="keyword">and</span> len(s) == len(t)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h5 id="205-Isomorphic-Strings"><a href="#205-Isomorphic-Strings" class="headerlink" title="205 Isomorphic Strings"></a>205 Isomorphic Strings</h5><p>209 和 205 同思路，同方法</p>
-<p><strong>Solution 1:</strong></p>
-<p><code>s</code>=”foo”</p>
-<p><code>t</code>=”bar”</p>
-<p>check={ f:true, o:true}</p>
-<p>dic={ f:b, o:a}</p>
-<p>When i =index2 </p>
-<p>o and r return false, since o is already in check</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isIsomorphic</span><span class="params">(self, s: str, t: str)</span> -&gt; bool:</span></span><br><span class="line">        dic=&#123;&#125;</span><br><span class="line">        check=&#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="keyword">if</span> s[i] <span class="keyword">in</span> dic:</span><br><span class="line">                <span class="keyword">if</span> dic[s[i]]!=t[i]:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> t[i] <span class="keyword">in</span> check:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">                dic[s[i]]=t[i]</span><br><span class="line">                check[t[i]]=<span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>solution 3:</strong> </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> len(set(zip(s, t))) == len(set(s)) == len(set(t))</span><br></pre></td></tr></table></figure>
-
-<p>python <strong>zip() 用法</strong></p>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>Hash Table</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>pay-attention</title>
-    <url>/2020/08/12/pay-attention-1/</url>
-    <content><![CDATA[<a id="more"></a>
-
-
-
-<p>Q: What is output for list1,2,3 ?</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extendList</span><span class="params">(val, list=[])</span>:</span></span><br><span class="line">    list.append(val)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line">list1 = extendList(<span class="number">10</span>)</span><br><span class="line">list2 = extendList(<span class="number">123</span>,[])</span><br><span class="line">list3 = extendList(<span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list1 = "</span>, list1)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list2 = "</span>, list2)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list3 = "</span>, list3)</span><br></pre></td></tr></table></figure>
-
-<p>Wrong answer : list1 = [10], list2 = [123], list3 = [‘a’]</p>
-<p>Correct answer :</p>
-<img src="pay-attention-1/pay-attention01.jpg" alt="pay-attention01" style="zoom:50%;" />
-
-
-
-<p>How could we change to it ?</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extendList</span><span class="params">(val, list=None)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> list <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    list = []</span><br><span class="line">  list.append(val)</span><br><span class="line">  <span class="keyword">return</span> list</span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
 </search>

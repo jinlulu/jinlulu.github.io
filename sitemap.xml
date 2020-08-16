@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jinlulu.github.io/about/index.html</loc>
+    
+    <lastmod>2020-08-16T03:04:29.348Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jinlulu.github.io/project/index.html</loc>
+    
+    <lastmod>2020-08-16T02:50:46.957Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jinlulu.github.io/2020/08/12/pay-attention-1/</loc>
     
-    <lastmod>2020-08-13T02:19:17.150Z</lastmod>
+    <lastmod>2020-08-13T02:30:29.938Z</lastmod>
     
   </url>
   
@@ -61,13 +75,6 @@
     <loc>https://jinlulu.github.io/categories/index.html</loc>
     
     <lastmod>2020-06-26T23:48:34.016Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jinlulu.github.io/about/index.html</loc>
-    
-    <lastmod>2020-06-25T12:59:44.133Z</lastmod>
     
   </url>
   
