@@ -1,76 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>leetcode 204</title>
-    <url>/2020/06/27/204/</url>
-    <content><![CDATA[<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Animation_Sieve_of_Eratosth.gif" alt=""></p>
-<a id="more"></a>
-
-<h5 id="204-Count-Primes-质数的个数"><a href="#204-Count-Primes-质数的个数" class="headerlink" title="204 Count  Primes 质数的个数"></a>204 Count  Primes 质数的个数</h5><p>Count the number of prime numbers less than a non-negative number, <strong><em>n\</em></strong>. 求小于n的质数的个数</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: 10</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.</span><br></pre></td></tr></table></figure>
-
-<p>解题思路：质数：一个大于1的自然数中，除了1和此数本身外，没有被其他自然数整除的数</p>
-<ol>
-<li><p>The number 1 is neither prime nor composite.</p>
-</li>
-<li><p>if n is a postive integer that does not have a prime divisor less than sqrt(n), the n is prime.</p>
-<p>举例：101 是质数吗？</p>
-<p>the prime less than sqrt(101) : 2,3,5,7</p>
-<p>但是101 都不能被2，3，5，7 整除， 所以101 是prime</p>
-</li>
-</ol>
-<p>​       举例： 1147 是质数吗？</p>
-<p>​       the prime less than sqrt(1147) : 2,3,5,7,11,13,17,23,29,31</p>
-<p>​      1147=31*37,所以1147 是质数</p>
-<ol start="3">
-<li><p>if n is a composite postive integer, then n has a prime divior less than sqrt(n)</p>
-<p><a href="http://zh.wikipedia.org/wiki/埃拉托斯特尼筛法" target="_blank" rel="noopener">埃拉托斯特尼筛法 Sieve of Eratosthenes</a> ：</p>
-</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countPrimes</span><span class="params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> n&lt;<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        res=[<span class="literal">True</span>]*n</span><br><span class="line">        res[<span class="number">0</span>],res[<span class="number">1</span>]=<span class="literal">False</span>,<span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n):</span><br><span class="line">            <span class="keyword">if</span> res[i]==<span class="literal">True</span>:</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(i*i,n,i):</span><br><span class="line">                    res[j]=<span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> sum(res)</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-  </entry>
-  <entry>
-    <title>git memo</title>
-    <url>/2020/08/02/git-memo/</url>
-    <content><![CDATA[<h3 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h3><p>Use .gitignore file can help you not to upload unnecessary files and folders.</p>
-<p>For example:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br></pre></td></tr></table></figure>
-
-<h3 id="if-gitignore-not-working"><a href="#if-gitignore-not-working" class="headerlink" title="if .gitignore not working"></a>if .gitignore not working</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># try this</span><br><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;update .gitignore&#39;</span><br></pre></td></tr></table></figure>
-
-
-
-<a id="more"></a>
-
-
-
-<h3 id="1-git-init"><a href="#1-git-init" class="headerlink" title="1. git init"></a>1. git init</h3><h3 id="2-git-add"><a href="#2-git-add" class="headerlink" title="2. git add"></a>2. git add</h3><p>Usage: <code>git add [file]</code></p>
-<p>Usage: <code>git add *</code>   This command adds one or more to the staging area.</p>
-<h3 id="3-git-status"><a href="#3-git-status" class="headerlink" title="3. git status"></a>3. git status</h3><p>Usage: <code>git status</code> </p>
-<p>This command lists all the files that have to be committed.</p>
-<h3 id="4-git-commit"><a href="#4-git-commit" class="headerlink" title="4. git commit"></a>4. git commit</h3><p>Usage: <code>git commit -m “[ Type in the commit message]”</code> </p>
-<p>This command records or snapshots the file permanently in the version history.</p>
-<h3 id="5-git-log"><a href="#5-git-log" class="headerlink" title="5. git log"></a>5. git log</h3><p>Usage: <code>git log</code> </p>
-<p>This command is used to list the version history for the current branch.</p>
-<h3 id="6-git-branch"><a href="#6-git-branch" class="headerlink" title="6. git branch"></a>6. git branch</h3><p>Usage: <code>git branch</code> </p>
-<p>This command lists all the local branches in the current repository.</p>
-<h3 id="7-git-branch"><a href="#7-git-branch" class="headerlink" title="7. git branch"></a>7. git branch</h3><p>Usage: <code>git branch</code>  Usage: <code>git checkout -b [branch name]</code> </p>
-<p>This command lists all the local branches in the current repository.</p>
-<h3 id="8-git-push"><a href="#8-git-push" class="headerlink" title="8. git push"></a>8. git push</h3><p><code>git push -u origin 0.1</code>   #branch</p>
-<p><code>git push -u origin master</code></p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Tower of Hanoi</title>
     <url>/2020/06/25/Tower-of-Hanoi/</url>
     <content><![CDATA[<p><img src="https://wdd.js.org/img/images/20180208212257_BZZjA5_1200px-The_Great_Wave_off_Kanagawa.jpeg" alt=""></p>
@@ -580,6 +510,108 @@
       </tags>
   </entry>
   <entry>
+    <title>leetcode 204</title>
+    <url>/2020/06/27/204/</url>
+    <content><![CDATA[<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Animation_Sieve_of_Eratosth.gif" alt=""></p>
+<a id="more"></a>
+
+<h5 id="204-Count-Primes-质数的个数"><a href="#204-Count-Primes-质数的个数" class="headerlink" title="204 Count  Primes 质数的个数"></a>204 Count  Primes 质数的个数</h5><p>Count the number of prime numbers less than a non-negative number, <strong><em>n\</em></strong>. 求小于n的质数的个数</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: 10</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.</span><br></pre></td></tr></table></figure>
+
+<p>解题思路：质数：一个大于1的自然数中，除了1和此数本身外，没有被其他自然数整除的数</p>
+<ol>
+<li><p>The number 1 is neither prime nor composite.</p>
+</li>
+<li><p>if n is a postive integer that does not have a prime divisor less than sqrt(n), the n is prime.</p>
+<p>举例：101 是质数吗？</p>
+<p>the prime less than sqrt(101) : 2,3,5,7</p>
+<p>但是101 都不能被2，3，5，7 整除， 所以101 是prime</p>
+</li>
+</ol>
+<p>​       举例： 1147 是质数吗？</p>
+<p>​       the prime less than sqrt(1147) : 2,3,5,7,11,13,17,23,29,31</p>
+<p>​      1147=31*37,所以1147 是质数</p>
+<ol start="3">
+<li><p>if n is a composite postive integer, then n has a prime divior less than sqrt(n)</p>
+<p><a href="http://zh.wikipedia.org/wiki/埃拉托斯特尼筛法" target="_blank" rel="noopener">埃拉托斯特尼筛法 Sieve of Eratosthenes</a> ：</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countPrimes</span><span class="params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> n&lt;<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        res=[<span class="literal">True</span>]*n</span><br><span class="line">        res[<span class="number">0</span>],res[<span class="number">1</span>]=<span class="literal">False</span>,<span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n):</span><br><span class="line">            <span class="keyword">if</span> res[i]==<span class="literal">True</span>:</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(i*i,n,i):</span><br><span class="line">                    res[j]=<span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> sum(res)</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>git memo</title>
+    <url>/2020/08/02/git-memo/</url>
+    <content><![CDATA[<h3 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h3><p>Use .gitignore file can help you not to upload unnecessary files and folders.</p>
+<p>For example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br></pre></td></tr></table></figure>
+
+<h3 id="if-gitignore-not-working"><a href="#if-gitignore-not-working" class="headerlink" title="if .gitignore not working"></a>if .gitignore not working</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># try this</span><br><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;update .gitignore&#39;</span><br></pre></td></tr></table></figure>
+
+
+
+<a id="more"></a>
+
+
+
+<h3 id="1-git-init"><a href="#1-git-init" class="headerlink" title="1. git init"></a>1. git init</h3><h3 id="2-git-add"><a href="#2-git-add" class="headerlink" title="2. git add"></a>2. git add</h3><p>Usage: <code>git add [file]</code></p>
+<p>Usage: <code>git add *</code>   This command adds one or more to the staging area.</p>
+<h3 id="3-git-status"><a href="#3-git-status" class="headerlink" title="3. git status"></a>3. git status</h3><p>Usage: <code>git status</code> </p>
+<p>This command lists all the files that have to be committed.</p>
+<h3 id="4-git-commit"><a href="#4-git-commit" class="headerlink" title="4. git commit"></a>4. git commit</h3><p>Usage: <code>git commit -m “[ Type in the commit message]”</code> </p>
+<p>This command records or snapshots the file permanently in the version history.</p>
+<h3 id="5-git-log"><a href="#5-git-log" class="headerlink" title="5. git log"></a>5. git log</h3><p>Usage: <code>git log</code> </p>
+<p>This command is used to list the version history for the current branch.</p>
+<h3 id="6-git-branch"><a href="#6-git-branch" class="headerlink" title="6. git branch"></a>6. git branch</h3><p>Usage: <code>git branch</code> </p>
+<p>This command lists all the local branches in the current repository.</p>
+<h3 id="7-git-branch"><a href="#7-git-branch" class="headerlink" title="7. git branch"></a>7. git branch</h3><p>Usage: <code>git branch</code>  Usage: <code>git checkout -b [branch name]</code> </p>
+<p>This command lists all the local branches in the current repository.</p>
+<h3 id="8-git-push"><a href="#8-git-push" class="headerlink" title="8. git push"></a>8. git push</h3><p><code>git push -u origin 0.1</code>   #branch</p>
+<p><code>git push -u origin master</code></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hello world</title>
+    <url>/2020/06/24/hello-world/</url>
+    <content><![CDATA[<p>插入图片</p>
+<a id="more"></a>
+
+
+<p>xxxxxxxxxxxx</p>
+]]></content>
+      <categories>
+        <category>前端技术</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pay-attention</title>
+    <url>/2020/08/12/pay-attention-1/</url>
+    <content><![CDATA[<a id="more"></a>
+
+
+
+<p>Q: What is output for list1,2,3 ?</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extendList</span><span class="params">(val, list=[])</span>:</span></span><br><span class="line">    list.append(val)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line">list1 = extendList(<span class="number">10</span>)</span><br><span class="line">list2 = extendList(<span class="number">123</span>,[])</span><br><span class="line">list3 = extendList(<span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list1 = "</span>, list1)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list2 = "</span>, list2)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list3 = "</span>, list3)</span><br></pre></td></tr></table></figure>
+
+<p>Wrong answer : list1 = [10], list2 = [123], list3 = [‘a’]</p>
+<p>Correct answer :</p>
+<p><img src="pay-attention-1/pay-attention01.jpg" alt=""></p>
+<p>How could we change to it ?</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extendList</span><span class="params">(val, list=None)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> list <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    list = []</span><br><span class="line">  list.append(val)</span><br><span class="line">  <span class="keyword">return</span> list</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>leetcode205 Isomorphic Strings</title>
     <url>/2020/07/07/leetcode205%20Isomorphic%20Strings/</url>
     <content><![CDATA[<p>Given two strings <strong><em>s</em></strong> and <strong><em>t</em></strong>, determine if they are isomorphic.</p>
@@ -649,22 +681,6 @@
       </categories>
       <tags>
         <tag>Hash Table</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hello world</title>
-    <url>/2020/06/24/hello-world/</url>
-    <content><![CDATA[<p>插入图片</p>
-<a id="more"></a>
-
-
-<p>xxxxxxxxxxxx</p>
-]]></content>
-      <categories>
-        <category>前端技术</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -794,21 +810,5 @@
 </tr>
 </tbody></table>
 ]]></content>
-  </entry>
-  <entry>
-    <title>pay-attention</title>
-    <url>/2020/08/12/pay-attention-1/</url>
-    <content><![CDATA[<a id="more"></a>
-
-
-
-<p>Q: What is output for list1,2,3 ?</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extendList</span><span class="params">(val, list=[])</span>:</span></span><br><span class="line">    list.append(val)</span><br><span class="line">    <span class="keyword">return</span> list</span><br><span class="line"></span><br><span class="line">list1 = extendList(<span class="number">10</span>)</span><br><span class="line">list2 = extendList(<span class="number">123</span>,[])</span><br><span class="line">list3 = extendList(<span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list1 = "</span>, list1)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list2 = "</span>, list2)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"list3 = "</span>, list3)</span><br></pre></td></tr></table></figure>
-
-<p>Wrong answer : list1 = [10], list2 = [123], list3 = [‘a’]</p>
-<p>Correct answer :</p>
-<p><img src="pay-attention-1/pay-attention01.jpg" alt=""></p>
-<p>How could we change to it ?</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extendList</span><span class="params">(val, list=None)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> list <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    list = []</span><br><span class="line">  list.append(val)</span><br><span class="line">  <span class="keyword">return</span> list</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
 </search>
